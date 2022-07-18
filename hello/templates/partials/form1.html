@@ -1,0 +1,40 @@
+<div id="trip-filter-section" class="trip-filter-section section">
+</div>
+<script type="text/javascript">
+    var arrivalField = document.getElementById('arrival');
+    var departureField = document.getElementById('departure');
+    var paxField = document.getElementById('PAX');
+    arrivalField.onfocus = function() {
+        this.type = 'date';
+        this.focus();
+    }
+    arrivalField.onblur = function() {
+        if (this.value == "") {
+            this.type = 'text';
+        } else {
+            this.type = 'date';
+        }
+    }
+    departureField.onfocus = function() {
+        this.type = 'date';
+        this.focus();
+    }
+    departureField.onblur = function() {
+        if (this.value == "") {
+            this.type = 'text';
+        } else {
+            this.type = 'date';
+        }
+    }
+    paxField.onfocus = function() {
+        this.type = 'number';
+        this.focus();
+    }
+    paxField.onblur = function() {
+        if (this.value == "") {
+            this.type = 'text';
+        } else {
+            this.type = 'number';
+        }
+    }
+</script>

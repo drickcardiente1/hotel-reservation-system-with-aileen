@@ -1,0 +1,128 @@
+<div id="contact-section" class="contact-section section">
+    <div class="wrapper">
+        <div class="section-content-wrapper contact-content-wrapper">
+            <article class="hentry contact-us-form">
+                <div class="left-content">
+                    <div class="left-content-offer">
+                        <div class="price-offer">
+                            <h2 class="entry-title">special offer</h2>
+                            <div class="price-per-person">
+                                <div class="price">
+                                    <span class="currency">₱</span><span class="amount">3599</span>
+                                </div>
+                                <div class="price-content">
+                                    <strong>per person</strong>
+                                    <p>3 nights stay at Aileen G Resort, front beach resort</p>
+                                </div>
+                            </div>
+                            <div class="offer-lists">
+                                <h2 class="entry-title">offer includes</h2>
+                                <ul>
+                                    <li><svg class="icon icon-angle-right" aria-hidden="true" role="img"> <use href="#icon-angle-right" xlink:href="#icon-angle-right"></use> </svg>private bathroom</li>
+                                    <li><svg class="icon icon-angle-right" aria-hidden="true" role="img"> <use href="#icon-angle-right" xlink:href="#icon-angle-right"></use> </svg>hot and cold shower</li>
+                                    <li><svg class="icon icon-angle-right" aria-hidden="true" role="img"> <use href="#icon-angle-right" xlink:href="#icon-angle-right"></use> </svg>bath tub</li>
+                                    <li><svg class="icon icon-angle-right" aria-hidden="true" role="img"> <use href="#icon-angle-right" xlink:href="#icon-angle-right"></use> </svg>free used of swimming pool</li>
+                                    <li><svg class="icon icon-angle-right" aria-hidden="true" role="img"> <use href="#icon-angle-right" xlink:href="#icon-angle-right"></use> </svg>complimentary drinks</li>
+                                    <li><svg class="icon icon-angle-right" aria-hidden="true" role="img"> <use href="#icon-angle-right" xlink:href="#icon-angle-right"></use> </svg>free massage</li>
+                                </ul>
+                                <a target="_self">for more info call +63 38 502 82 89</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="entry-container" id="quick_booking">
+                    <div class="inner-container">
+                        <header class="entry-header">
+                            <h2 class="entry-title ">Quick Booking</h2>
+                        </header>
+                        <div class="entry-content">
+                            <p>
+                                <div role="form" class="wpcf7" id="wpcf7-f59-o1" lang="en-US" dir="ltr">
+                                    <div class="screen-reader-response">
+                                        <p role="status" aria-live="polite" aria-atomic="true"></p>
+                                        <ul></ul>
+                                    </div>
+                                    <form action="{% url 'home' %}" method="post" class="wpcf7-form init" data-status="init">
+                                        {% csrf_token %}
+                                        <div style="display: none;">
+                                            <input type="hidden" name="_wpcf7" value="59" />
+                                            <input type="hidden" name="_wpcf7_version" value="5.5.6.1" />
+                                            <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f59-o1" />
+                                            <input type="hidden" name="_wpcf7_container_post" value="0" />
+                                            <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                                        </div>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap email">
+                                                <input type="email" name="E-mail" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="E-Mail" required/></span>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap name">
+                                                <input type="text" name="Name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Name" required/></span>
+                                        </p>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap tel-530 arval">
+                                                <input type="text" name="Arrival" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="arrival" aria-required="true" aria-invalid="false" placeholder="Arrival" required/></span>
+                                        </p>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap tel-530">
+                                                <input type="text" name="Departure" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" id="departure" aria-required="true" aria-invalid="false" placeholder="Departure" required/></span>
+                                        </p>
+                                        <p>
+                                            <select class="form-select" name="RoomType" aria-label="Default select example">
+                                                <option selected>Please Select Room Type</option>
+                                                <option value="Luxury Room">Luxury Room - P1299</option>
+                                                <option value="Classic Room">Classic Room -P1099</option>
+                                                <option value="Budget Room">Budget Room - P999</option>
+                                              </select>
+                                        
+                                        </p>
+                                        <p>
+                                            <span class="Message">
+                                                <textarea name="Message" cols="40" rows="10" class="form-control" aria-required="true" aria-invalid="false" placeholder="Message"></textarea></span>
+                                            <br/>
+                                        </p>
+                                        <p><input type="submit" value="Book Now" class="wpcf7-form-control has-spinner wpcf7-submit" /></p>
+                                        <div class="wpcf7-response-output" aria-hidden="true"></div>
+                                    </form>
+                                </div>
+                                <script type="text/javascript">
+                                    var arrivalField = document.getElementById('arrival');
+                                    var departureField = document.getElementById('departure');
+                                    arrivalField.onfocus = function() {
+                                        this.type = 'date';
+                                        this.focus();
+                                    }
+                                    arrivalField.onblur = function() {
+                                        if (this.value == "") {
+                                            this.type = 'text';
+                                        } else {
+                                            this.type = 'date';
+                                        }
+                                    }
+                                    departureField.onfocus = function() {
+                                        this.type = 'date';
+                                        this.focus();
+                                    }
+                                    departureField.onblur = function() {
+                                        if (this.value == "") {
+                                            this.type = 'text';
+                                        } else {
+                                            this.type = 'date';
+                                        }
+                                    }
+                                </script>
+                            </p>
+
+                        </div>
+                    </div>
+                    <!-- .inner-container -->
+                </div>
+                <!-- .entry-container -->
+            </article>
+            <!-- .hentry -->
+        </div>
+    </div>
+    <!-- .wrapper -->
+</div>

@@ -1,0 +1,97 @@
+{% extends "admin.html" %} {% block title %} | Home {% endblock %} {% block content %} {% if user.is_staff %}
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" style="text-align: center; background-color: rgba(0, 0, 0, 0.55);">
+        <div class="sidebar-header">
+            <h3 style="color: white;">Guest Request</h3>
+        </div>
+        <ul class="list-unstyled components">
+            {% for i in page_obj %}
+            <li style="padding:0.5rem; margin-bottom: 0rem;">
+                <a href="{% url 'view' i.id %}?p={{ page_obj.number }}" class="btn btn-outline-info">{{ i }}</a>{% endfor %}
+            </li>
+        </ul>
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="" class="download" data-toggle="modal" data-target="#exampleModal">Clear request</a>
+            </li>
+            <li>
+                {% if page_obj %} {% if page_obj.has_previous %}
+                <a href="?p={{ page_obj.previous_page_number }}" type="button" class="btn btn-success" style="box-shadow: none; width: 49%; float: left;"><i class="bi bi-arrow-left"></i></i></a>{% endif %} {% if page_obj.has_next %}
+                <a href="?p={{ page_obj.next_page_number }}" type="button" class="btn btn-success" style="box-shadow: none; width: 49%; float: right;"><i class="bi bi-arrow-right"></i></a> {% endif %}{% endif %}
+            </li>
+        </ul>
+    </nav>
+    <!-- Page Content Holder -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'procceslogout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <table class="table" style="background-color: rgba(0, 0, 0, 0.55); text-align: center;">
+            <thead>
+                <tr>
+                    <th style="border:1px solid brown;color:white;">Email</th>
+                    <th style="border:1px solid brown;color:white;">Name</th>
+                    <th style="border:1px solid brown;color:white;">Arrival</th>
+                    <th style="border:1px solid brown;color:white;">Departure</th>
+                    <th style="border:1px solid brown;color:white;">Room Type</th>
+                    <th style="border:1px solid brown;color:white;">Price per Night</th>
+                    <th style="border:1px solid brown;color:white;">No of Nights</th>
+                    <th style="border:1px solid brown;color:white;">Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if guest_id %}
+                <tr>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Email }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Name }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Arival }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Departure }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.RoomType }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Price }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Nights }}</td>
+                    <td style="border:1px solid brown;color:white;">{{ guest_id.Total }}</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <h1 style="text-align: center; color: rgb(255, 255, 255);">Message</h1>
+        <div class="message" style="background-color: rgba(0, 0, 0, 0.55);; max-width: 80%;height: 40%; border: 1px solid green; margin: 20px; border-radius: 15px; margin: auto; padding: 15px;">
+            <p style="color: rgb(255, 255, 255);">{{ guest_id.Message }}</p>
+        </div>
+        <br> {% if guest_id %}
+        <a href="{% url 'delete_procces' guest_id.id %}" type="button" class="btn btn-danger" style="box-shadow: none; width: 15%; float: right;"><i class="bi bi-trash"></i></a> {% endif %}
+        <br>
+        <div class="line"></div>
+    </div>
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+    });
+</script>
+{% endif %} {% endblock %}
